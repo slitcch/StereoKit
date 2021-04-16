@@ -51,11 +51,11 @@ typedef int32_t bool32_t;
 
 ///////////////////////////////////////////
 
-typedef enum display_mode_ {
-	display_mode_mixedreality = 0,
-	display_mode_flatscreen   = 1,
-	display_mode_none         = 2,
-} display_mode_;
+typedef enum application_mode_ {
+	application_mode_mixedreality = 0,
+	application_mode_flatscreen   = 1,
+	application_mode_none         = 2,
+} application_mode_;
 
 typedef enum depth_mode_ {
 	depth_mode_balanced = 0,
@@ -67,7 +67,7 @@ typedef enum depth_mode_ {
 typedef struct sk_settings_t {
 	const char   *app_name;
 	const char   *assets_folder;
-	display_mode_ display_preference;
+	application_mode_ application_mode_preference;
 	bool32_t      no_flatscreen_fallback;
 	depth_mode_   depth_mode;
 	int32_t  flatscreen_pos_x;
@@ -80,10 +80,10 @@ typedef struct sk_settings_t {
 	void    *android_activity; // jobject
 } sk_settings_t;
 
-typedef enum display_ {
-	display_opaque = 0,
-	display_additive,
-	display_passthrough,
+typedef enum blend_mode_ {
+	blend_mode_opaque = 0,
+	blend_mode_additive,
+	blend_mode_passthrough,
 } display_;
 
 typedef struct system_info_t {
@@ -101,7 +101,7 @@ SK_API void          sk_set_window_xam     (void *window);
 SK_API void          sk_shutdown           ();
 SK_API void          sk_quit               ();
 SK_API bool32_t      sk_step               (void (*app_update)(void));
-SK_API display_mode_ sk_active_display_mode();
+SK_API application_mode sk_active_display_mode();
 SK_API sk_settings_t sk_get_settings       ();
 SK_API system_info_t sk_system_info        ();
 SK_API const char   *sk_version_name       ();

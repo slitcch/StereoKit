@@ -97,7 +97,7 @@ int __stdcall wWinMain(void*, void*, wchar_t*, int) {
 	sk_settings_t settings = {};
 	settings.app_name           = "StereoKit C";
 	settings.assets_folder      = assets_folder;
-	settings.display_preference = display_mode_mixedreality;
+	settings.application_mode_preference = application_mode_mixedreality;
 	if (!sk_init(settings))
 		return 1;
 

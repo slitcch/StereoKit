@@ -19,7 +19,7 @@ hand_joint_t     oxra_hand_joints[2][26];
 
 bool hand_oxra_available() {
 	return
-		sk_active_display_mode() == display_mode_mixedreality &&
+		sk_active_display_mode() == application_mode_mixedreality &&
 		xr_session               != XR_NULL_HANDLE            &&
 		xr_has_articulated_hands == true;
 }
